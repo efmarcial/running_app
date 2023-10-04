@@ -1,23 +1,33 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'main_app/main.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>{% block title %}My amazing site{% endblock %}</title>
 
 </head>
 
 <body>
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="{% url 'register' %}">register</a></li>
-        </ul>
-        {% endblock %}
-    </div>
+    <nav class="mobile-nav">
+        <a href="#" class="bloc-icon">
+            <p>Home</p>
+        </a>
+        <a href="#" class="bloc-icon">
+            <p>Home</p>
+        </a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="bloc-icon">
+                <p>Profile</p>
+        {% else %}
+            <a href="{% url 'login' %}" class="bloc-icon">
+                <p>Login</p>
+        {% endif %}
+
+        </a>
+    </nav>
 
     <div id="content">
         {% block content %}{% endblock %}

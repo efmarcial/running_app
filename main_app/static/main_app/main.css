@@ -1,0 +1,29 @@
+.mobile-nav {
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bloc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-icon img {
+    width: 30px;
+}
+
+/*This media query controls the bottom nav
+    the following code will make the nav disappear 
+    for screens larger than 600px
+*/
+@media screen and (min-width: 600px) {
+    .mobile-nav {
+        display: none;
+    }
+}
