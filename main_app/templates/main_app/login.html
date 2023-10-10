@@ -3,7 +3,6 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
     <h1>Login Page</h1>
     <form action="" method="post">
         {% csrf_token %}
@@ -13,8 +12,4 @@
         <a href="{% url 'register' %}">Register</a>
     </form>
 
-{% else %}
-<meta http-equiv="refresh" content="7; url='/profile/'" />
-
-{% endif %}
 {% endblock %}
