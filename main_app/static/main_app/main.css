@@ -32,6 +32,11 @@
     float:right
 }
 
+#login-section {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 /*This media query controls the bottom nav
     the following code will make the nav disappear 
