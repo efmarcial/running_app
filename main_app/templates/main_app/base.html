@@ -22,7 +22,10 @@
             </span>
         </a>
         <a href="#" class="bloc-icon">
-            <p>Home</p>
+            <span class="fa-stack" style="vertical-align: top;">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-person-running fa-stack-1x"></i>
+            </span>
         </a>
         {% if user.is_authenticated %}
             <a href="{% url 'profile' %}" class="bloc-icon">
