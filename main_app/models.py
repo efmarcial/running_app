@@ -10,3 +10,18 @@ class Person(models.Model):
     
     user = models.ForeignKey(User, verbose_name=("the related user"), on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to=user_directory_path )
+    wieght = models.FloatField(max_length=255,null=True)
+    height = models.FloatField(max_length=255, null=True)
+    
+class Activity(models.Model):
+    
+    user = models.ForeignKey(User, verbose_name="the related user", on_delete=models.CASCADE)
+    
+    activity_type = models.CharField(max_length=255, default="activity name")
+    activity_duration = models.FloatField(max_length=500, default=0)
+    
+    #Store cordinates as charefield since its going to be a string
+    location = models.CharField(max_length=255, null=True)
+    
+    def __str__(self) -> str:
+        return self.user.firstname

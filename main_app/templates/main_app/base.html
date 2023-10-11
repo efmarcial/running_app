@@ -55,8 +55,11 @@
 
     </nav>
 
-    <div id="content">
-        {% block content %}{% endblock %}
+    <div id="content" >
+        <section class="hero">
+            {% block content %}{% endblock %}
+        </section>
+        
     </div>
 </body>
 <script src="{% static 'main_app/main.js' %}"></script>
