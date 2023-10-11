@@ -16,23 +16,30 @@
 <body>
     <nav class="mobile-nav">
         <a href="/" class="bloc-icon">
-            <i class="fa-solid fa-house"></i>
+            <span class="fa-stack" style="vertical-align: top;">
+                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-home fa-stack-1x"></i>
+            </span>
         </a>
         <a href="#" class="bloc-icon">
             <p>Home</p>
         </a>
         {% if user.is_authenticated %}
             <a href="{% url 'profile' %}" class="bloc-icon">
-                <span class="fa-stack fa-2x">
+                <span class="fa-stack" style="vertical-align: top;">
                     <i class="fa-regular fa-circle fa-stack-2x"></i>
                     <i class="fa-solid fa-user fa-stack-1x"></i>
                 </span>
+            </a>
         {% else %}
             <a href="{% url 'login' %}" class="bloc-icon">
-                <p>Login</p>
+                <span class="fa-stack" style="vertical-align: top;">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid fa-user fa-stack-1x"></i>
+                </span>
+            </a>
         {% endif %}
 
-        </a>
     </nav>
 
     <div id="content">
