@@ -18,8 +18,14 @@
     width: 30px;
 }
 
+.mobile-nav a.active-bottom {
+    color: purple;
+}
+
 .topnav {
     background-color: white;
+    overflow: hidden;
+    height: 40px;
 }
 
 .topnav-right{
