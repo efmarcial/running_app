@@ -20,6 +20,8 @@
 
 .topnav {
     background-color: white;
+    overflow: hidden;
+    height: 40px;
 }
 
 .topnav-right{
