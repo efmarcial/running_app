@@ -73,3 +73,6 @@ def logout_view(request):
     print('Logout successful')
     return HttpResponse("Logout successful")
     
+def settings_page(request):
+    context = {}
+    return render(request, "main_app/settings.html", context=context)

@@ -18,6 +18,16 @@
     width: 30px;
 }
 
+.topnav {
+    background-color: aqua;
+    overflow: hidden;
+}
+
+.topnav-right{
+    float:right
+}
+
+
 /*This media query controls the bottom nav
     the following code will make the nav disappear 
     for screens larger than 600px
