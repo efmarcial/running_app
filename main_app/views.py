@@ -3,6 +3,10 @@ from django.http import HttpResponse
 
 from .forms import RegisterForm
 
+# Models 
+from .models import *
+from django.contrib.auth.models import User
+
 # Django Auth
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
@@ -35,14 +39,26 @@ def profile(request):
     
     # Auth in web request.
     if  request.user.is_authenticated:
+        
+        user = request.user
         print("user is auth")
         # Get current user profile
+        try:
+            user_object = User.objects.get(id=user.id) # returns username
+            person_object = Person.objects.get(id=user.id) # returns object
+            
+            
+        except Exception as e:
+            print(e)
     
     else:
         print('user not auth')
         return redirect("login/")
     
-    context = {}
+    context = {
+        "user_object" : user_object,
+        "person_object" : person_object
+    }
     
     return render(request, "main_app/profile.html", context)
 
@@ -57,7 +73,7 @@ def login_user(request):
             if user is not None:
                 login(request, user)
                 # redirect to a sucess page.
-                return HttpResponse('profile')
+                return redirect('profile')
             else:
                 return HttpResponse('Invalid login error')
         except Exception as e:

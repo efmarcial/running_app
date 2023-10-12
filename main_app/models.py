@@ -9,7 +9,7 @@ def user_directory_path(instance, filename):
 class Person(models.Model):
     
     user = models.ForeignKey(User, verbose_name=("the related user"), on_delete=models.CASCADE)
-    profile_picture = models.ImageField(upload_to=user_directory_path )
+    profile_picture = models.ImageField(upload_to=user_directory_path,default="user_icon.png")
     wieght = models.FloatField(max_length=255,null=True)
     height = models.FloatField(max_length=255, null=True)
     
